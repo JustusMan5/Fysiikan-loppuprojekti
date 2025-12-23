@@ -33,8 +33,8 @@ def butter_lowpass_filter(data, cutoff, nyq, order):
 
 
 # ACCELERATION #
-
-df = pd.read_csv('Linear Acceleration.csv')
+url = "https://raw.githubusercontent.com/JustusMan5/Fysiikan-loppuprojekti/refs/heads/main/Linear%20Acceleration.csv"
+df = pd.read_csv(url)
 
 data = df['Linear Acceleration y (m/s^2)']
 T_tot = df['Time (s)'].max() 
@@ -84,7 +84,8 @@ steps = f_max*np.max(t)
 
 # GPS #
 
-df_location = pd.read_csv('Location.csv')
+url_location = "https://raw.githubusercontent.com/JustusMan5/Fysiikan-loppuprojekti/refs/heads/main/Location.csv"
+df_location = pd.read_csv(url_location)
 df_location.head()
 
 df_location = df_location[df_location['Horizontal Accuracy (m)'] < 4]
